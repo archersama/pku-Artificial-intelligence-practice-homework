@@ -109,7 +109,6 @@ if train_mode:
                 # 交叉熵损失函数，并且用了softmax，用的时候把前面的一个注释掉
                 loss = tf.reduce_mean(tf.losses.categorical_crossentropy(y, y_one_hot))
                 loss_all += loss.numpy()
-                loss_all += loss.numpy()
 
                 # compute gradients
                 grads = tape.gradient(loss, [w1, b1, w2, b2])  # 记录计算梯度  loss对w1,b1,w2...的梯度
@@ -119,7 +118,7 @@ if train_mode:
                 m_b1 = grads[1]
                 m_w2 = grads[2]
                 m_b2 = grads[3]
-                v_w1+=tf.pow(m_w1,2)
+                v_w1 += tf.pow(m_w1,2)
                 v_b1 += tf.pow(m_b1, 2)
                 v_w2 += tf.pow(m_w2, 2)
                 v_b2 += tf.pow(m_b2, 2)
