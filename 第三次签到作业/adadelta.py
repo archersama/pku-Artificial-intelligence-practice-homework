@@ -131,8 +131,8 @@ if train_mode:
                 b2.assign_sub(n_b2)
             if step % 10 == 0:
                     print(epoch, step, 'loss:', float(loss))
-            train_loss_results.append(loss_all)
-            loss_all = 0
+        train_loss_results.append(loss_all)
+        loss_all = 0
 
         # test model(做测试）
 
