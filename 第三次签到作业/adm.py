@@ -135,8 +135,8 @@ if train_mode:
                 b2.assign_sub(learning_rate * m_b2_correction / tf.sqrt(v_b2_correction))
             if step % 10 == 0:
                     print(epoch, step, 'loss:', float(loss))
-            train_loss_results.append(loss_all)
-            loss_all = 0
+        train_loss_results.append(loss_all)
+        loss_all = 0
 
         # test model(做测试）
 
